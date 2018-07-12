@@ -58,7 +58,7 @@ make_filename <- function(year) {
 #' @examples
 #' \dontrun{
 #' list_data <- fars_read_years(c(2013,2014,2015))
-#' head(list_data)
+#' print(list_data)
 #' }
 fars_read_years <- function(years) {
   lapply(years, function(year) {
@@ -91,7 +91,7 @@ fars_read_years <- function(years) {
 #' @examples
 #' \dontrun{
 #' summarized_data <- fars_summarize_years(c(2013,2014,2015))
-#' head(summarized_data)
+#' print(summarized_data)
 #' }
 #' @export
 fars_summarize_years <- function(years) {
@@ -128,7 +128,7 @@ fars_map_state <- function(state.num, year) {
   state.num <- as.integer(state.num)
 
   if(!(state.num %in% unique(data$STATE)))
-    stop("invalid STATE number : ", state.num)
+    stop("invalid STATE number: ", state.num)
   data.sub <- dplyr::filter(data, STATE == state.num)
   if(nrow(data.sub) == 0L) {
     message("no accidents to plot")
