@@ -24,6 +24,6 @@ This function requires a vector with valid year representing values, otherwise i
 \examples{
 \dontrun{
 summarized_data <- fars_summarize_years(c(2013,2014,2015))
-print(summarized_data)
+head(summarized_data)
 }
 }
