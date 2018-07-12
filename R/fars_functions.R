@@ -58,7 +58,7 @@ make_filename <- function(year) {
 #' @examples
 #' \dontrun{
 #' list_data <- fars_read_years(c(2013,2014,2015))
-#' print(list_data)
+#' head(list_data)
 #' }
 fars_read_years <- function(years) {
   lapply(years, function(year) {
