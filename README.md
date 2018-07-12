@@ -1,10 +1,8 @@
 
-farsPackage
-===========
+farsPackage [![Build Status](https://travis-ci.org/abhinavcreed13/testRPackage.svg?branch=master)](https://travis-ci.org/abhinavcreed13/testRPackage)
+=====================================================================================================================================================
 
 Building R Packages - Week 4 Assignment
-
-[![Build Status](https://travis-ci.org/abhinavcreed13/testRPackage.svg?branch=master)](https://travis-ci.org/abhinavcreed13/testRPackage)
 
 FarsPackage helps in reading Fatality Analysis Reporting System(FARS) data file and perform some analysis on it. You can easily include this package using following command:
 
