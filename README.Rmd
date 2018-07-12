@@ -1,21 +1,17 @@
 ---
-title: "Using the `farsPackage`"
-author: "Abhinav Sharma"
-date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{Using the `farsPackage`}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+output: github_document
 ---
 
+# farsPackage
+Building R Packages - Week 4 Assignment
+
+[![Build Status](https://travis-ci.org/abhinavcreed13/testRPackage.svg?branch=master)](https://travis-ci.org/abhinavcreed13/testRPackage)
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
 ```
-
 FarsPackage helps in reading Fatality Analysis Reporting System(FARS) data file and perform some analysis on it. 
 You can easily include this package using following command:
 ```{r}

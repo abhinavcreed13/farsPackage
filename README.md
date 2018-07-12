@@ -1,12 +1,5 @@
 ---
-title: "Using the `farsPackage`"
-author: "Abhinav Sharma"
-date: "2018-07-13"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{Using the `farsPackage`}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+output: github_document
 ---
 
 # farsPackage
@@ -52,4 +45,4 @@ To Visualize fatalities data on the basis of different states, you can use follo
 fars_map_state(state.num = 4, year=2013)
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
