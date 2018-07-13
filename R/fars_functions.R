@@ -1,3 +1,15 @@
+#' \code{farsPackage} package
+#'
+#' FARS Package
+#'
+#' @docType package
+#' @name farsPackage
+#' @importFrom dplyr %>%
+NULL
+
+## quiets concerns of R CMD check re: the .'s that appear in pipelines
+utils::globalVariables(c("."))
+
 #' Reads data from Fatality Analysis Reporting System(FARS) file
 #'
 #' @param filename absolute or relative path of the FARS file

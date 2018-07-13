@@ -3,7 +3,7 @@ Type: Package
 Title: FARS Data File Analyzer
 Version: 0.1.0 
 Author: Abhinav Sharma
-Depends: dplyr,graphics,maps,readr,tidyr,testthat
+Depends: dplyr,graphics,maps,readr,tidyr
 Maintainer: Abhinav Sharma <abhinavcs13@gmail.com>
 Description: FarsPackage helps in reading Fatality Analysis Reporting System(FARS) 
     data file and perform some analysis on it.
