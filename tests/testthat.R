@@ -1,2 +1,2 @@
 library(testthat)
-test_check(farsPackage)
+test_check("farsPackage")
