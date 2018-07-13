@@ -1,8 +1,27 @@
+# farsPackage [![Build Status](https://travis-ci.org/abhinavcreed13/testRPackage.svg?branch=master)](https://travis-ci.org/abhinavcreed13/testRPackage)	
 
 FarsPackage helps in reading Fatality Analysis Reporting System(FARS) data file and perform some analysis on it. You can easily include this package using following command:
 
 ``` r
 library(farsPackage)
+#> Loading required package: dplyr
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+#> Loading required package: maps
+#> Loading required package: readr
+#> Loading required package: tidyr
+#> Loading required package: testthat
+#> 
+#> Attaching package: 'testthat'
+#> The following object is masked from 'package:dplyr':
+#> 
+#>     matches
 ```
 
 Once package is loaded, you can use following functions to summarize and visualize FARS data.
@@ -10,10 +29,12 @@ Once package is loaded, you can use following functions to summarize and visuali
 Loading data
 ------------
 
-The function `system.file` is the key that will allow us to gain access to the 2013 to 2015 data within the package. Let's begin with the 2015 data.
+To load data, you need to copy valid FARS file name into the working directory.
+
+The function `system.file` is the key that will allow us to gain access to the 2013 to 2015 data within the package.
 
 ``` r
-### the following code reads access the accident_2015.csv.bz2 file in the folder extdata in package FARSread and save it as an R object named fars_2015
+### the following code reads access the accident_2013.csv.bz2 file in the folder extdata in package farsPackage and save it as an R object named fars_2013
 fars_2013 <- system.file("extdata", "accident_2013.csv.bz2", package = "farsPackage")
 fars_2014 <- system.file("extdata", "accident_2014.csv.bz2", package = "farsPackage")
 fars_2015 <- system.file("extdata", "accident_2015.csv.bz2", package = "farsPackage")
@@ -26,6 +47,8 @@ file.copy(from = fars_2014, to = getwd())
 file.copy(from = fars_2015, to = getwd()) 
 #> [1] TRUE
 ```
+
+You can place any valid FARS file data with the provided file name format inside working directory. Then, you can use library functions without any error.
 
 Summarizing years of data
 -------------------------
@@ -57,24 +80,24 @@ To Visualize fatalities data on the basis of different states, you can use follo
 fars_map_state(state.num = 4, year=2013)
 ```
 
-![](readme_files/figure-markdown_github/unnamed-chunk-3-1.png)
+![](unnamed-chunk-3-1.png)
 
 ``` r
 fars_map_state(state.num = 4, year=2014)
 ```
 
-![](readme_files/figure-markdown_github/unnamed-chunk-3-2.png)
+![](unnamed-chunk-3-2.png)
 
 ``` r
 fars_map_state(state.num = 4, year=2015)
 ```
 
-![](readme_files/figure-markdown_github/unnamed-chunk-3-3.png)
+![](unnamed-chunk-3-3.png)
 
 Deleting data from working directory
 ------------------------------------
 
-Before we end, let's get read of the copy of the files we copied from the system directory to the working directory.
+After you have analyzed FARS data, you can delete files from working directory using following R commands.
 
 ``` r
 file.remove("./accident_2013.csv.bz2")
