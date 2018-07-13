@@ -5,10 +5,11 @@
 #' @docType package
 #' @name farsPackage
 #' @importFrom dplyr %>%
+#' @import testthat
 NULL
 
 ## quiets concerns of R CMD check re: the .'s that appear in pipelines
-utils::globalVariables(c("."))
+utils::globalVariables(c(".","STATE","MONTH","year","n"))
 
 #' Reads data from Fatality Analysis Reporting System(FARS) file
 #'
