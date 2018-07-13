@@ -1,9 +1,4 @@
 
-farsPackage [![Build Status](https://travis-ci.org/abhinavcreed13/testRPackage.svg?branch=master)](https://travis-ci.org/abhinavcreed13/testRPackage)
-=====================================================================================================================================================
-
-Building R Packages - Week 4 Assignment
-
 FarsPackage helps in reading Fatality Analysis Reporting System(FARS) data file and perform some analysis on it. You can easily include this package using following command:
 
 ``` r
@@ -11,6 +6,26 @@ library(farsPackage)
 ```
 
 Once package is loaded, you can use following functions to summarize and visualize FARS data.
+
+Loading data
+------------
+
+The function `system.file` is the key that will allow us to gain access to the 2013 to 2015 data within the package. Let's begin with the 2015 data.
+
+``` r
+### the following code reads access the accident_2015.csv.bz2 file in the folder extdata in package FARSread and save it as an R object named fars_2015
+fars_2013 <- system.file("extdata", "accident_2013.csv.bz2", package = "farsPackage")
+fars_2014 <- system.file("extdata", "accident_2014.csv.bz2", package = "farsPackage")
+fars_2015 <- system.file("extdata", "accident_2015.csv.bz2", package = "farsPackage")
+
+### copy the file from its folder and save it to the working directory
+file.copy(from = fars_2013, to = getwd()) 
+#> [1] TRUE
+file.copy(from = fars_2014, to = getwd()) 
+#> [1] TRUE
+file.copy(from = fars_2015, to = getwd()) 
+#> [1] TRUE
+```
 
 Summarizing years of data
 -------------------------
@@ -43,3 +58,29 @@ fars_map_state(state.num = 4, year=2013)
 ```
 
 ![](readme_files/figure-markdown_github/unnamed-chunk-3-1.png)
+
+``` r
+fars_map_state(state.num = 4, year=2014)
+```
+
+![](readme_files/figure-markdown_github/unnamed-chunk-3-2.png)
+
+``` r
+fars_map_state(state.num = 4, year=2015)
+```
+
+![](readme_files/figure-markdown_github/unnamed-chunk-3-3.png)
+
+Deleting data from working directory
+------------------------------------
+
+Before we end, let's get read of the copy of the files we copied from the system directory to the working directory.
+
+``` r
+file.remove("./accident_2013.csv.bz2")
+#> [1] TRUE
+file.remove("./accident_2014.csv.bz2")
+#> [1] TRUE
+file.remove("./accident_2015.csv.bz2")
+#> [1] TRUE
+```
