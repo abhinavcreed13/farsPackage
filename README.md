@@ -80,19 +80,19 @@ To Visualize fatalities data on the basis of different states, you can use follo
 fars_map_state(state.num = 4, year=2013)
 ```
 
-![](unnamed-chunk-3-1.png)
+![](README-unnamed-chunk-3-1.png)
 
 ``` r
 fars_map_state(state.num = 4, year=2014)
 ```
 
-![](unnamed-chunk-3-2.png)
+![](README-unnamed-chunk-3-2.png)
 
 ``` r
 fars_map_state(state.num = 4, year=2015)
 ```
 
-![](unnamed-chunk-3-3.png)
+![](README-unnamed-chunk-3-3.png)
 
 Deleting data from working directory
 ------------------------------------
